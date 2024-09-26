@@ -10,12 +10,17 @@ public class Main
 	{
       		Scanner input = new Scanner(System.in);
 		
-		System.out.print("Enter a string: ");
+		System.out.print("Enter a word: ");
 		String str = input.nextLine();
-        		 	
-		String piggie = PigLatin.convertSentence(str);
+		String piggie = PigLatin.convertWord(str.toLowerCase());
 		System.out.println();
 		System.out.println("Converted word: " + piggie);
+
+        System.out.print("Enter a sentence: ");
+		str = input.nextLine();
+        String piggie1 = PigLatin.convertSentence(str.toLowerCase());
+		System.out.println();
+		System.out.println("Converted word: " + piggie1);
 	}
 }
 
@@ -30,7 +35,7 @@ class PigLatin
     // Check for vowel (returns true or false)
     public static boolean isVowel(String s) 
     {
-        char first = s.toLowerCase().charAt(0);
+        char first = s.charAt(0);
         boolean vowel = first == 'a' || first == 'e' || first == 'i' || first == 'o' || first == 'u';
         return vowel;
     }
